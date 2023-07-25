@@ -1,0 +1,172 @@
+WindowManager:
+    Moje_Przepisy:
+    ChlebZytni:
+    Pizza:
+    ChlebZiarna:
+    Drozdzowka:
+
+<Moje_Przepisy>:
+    name: 'przepisy'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+        padding: 20
+        spacing: 20
+
+
+        Button:
+            text: 'Chleb żytni na zakwasie'
+            background_normal: ''
+            background_color: (1, 0, 1, 1)
+            on_release:
+                app.root.current = 'zytni'
+                root.manager.transition.direction = 'left'
+        Button:
+            text: 'Pizza na kamieniu'
+            background_normal: ''
+            background_color: (1, 0, 1, 1)
+            on_release:
+                app.root.current = 'pizza'
+                root.manager.transition.direction = 'left'
+        Button:
+            text: 'Chleb z ziarnami'
+            background_normal: ''
+            background_color: (1, 0, 1, 1)
+            on_release:
+                app.root.current = 'ziarna'
+                root.manager.transition.direction = 'left'
+
+        Button:
+            text: 'Drożdżówka z owocami'
+            background_normal: ''
+            background_color: (1, 0, 1, 1)
+            on_release:
+                app.root.current = 'drozdzowka'
+                root.manager.transition.direction = 'left'
+
+<ChlebZytni>:
+    name: 'zytni'
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            text: 'SKŁADNIKI:'
+            font_size: 25
+            bold: True
+        Label:
+            text: '-500 ml wody \n-600 gram mąki żytniej typ 720 \n-150 gram zakwasu \n-1.5 łyżeczki soli'
+        Label:
+            text: 'PRZYGOTOWANIE:'
+            font_size: 25
+            bold: True
+        Label:
+            text: 'Do miski wsyp wszystkie składniki i wymieszaj. Wymieszaną masę przełóż do podłużnej blachy wysmarowanej masłem i odczekaj aż ciasto podwoi swoją objętość. Możesz naciąć ciasto, aby nie pękało podczas wyrastania. Długość wyrastania zależy od mocy zakwasu, im starszy zakwas tym szybciej ciasto wyrośnie. Po wyrośnięciu czyli około 3 godzinach, do piekarnika wstaw blachę z wodą i rozgrzej piekarnik do 250 stopni. Wstaw blachę z ciastem na 10 minut z opcją pieczenia góra/dół. Po 10 minutach zmniejsz temperaturę do 200 stopni, wyjmij blachę z wodą, zmień opcję pieczenia na dół i piecz przez jeszcze 40 minut. '
+            text_size: self.width, None
+            #size_hint: 1, None
+            #height: self.texture_size[1]
+        Button:
+            text: 'Moje_Przepisy'
+            on_release:
+                app.root.current = 'przepisy'
+                root.manager.transition.direction = 'right'
+
+
+<Pizza>:
+    name: 'pizza'
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            text: 'SKŁADNIKI:'
+            font_size: 25
+            bold: True
+        Label:
+            text: '-343 ml wody\n-623 gram mąki typ 00\n-17 gram soli\n-0.82 gram świeżych drożdży\n-17 gram oliwy'
+        Label:
+            text: 'PRZYGOTOWANIE:'
+            font_size: 25
+            bold: True
+        Label:
+            text: 'Zagnieść ciasto aż przestanie się kleić do rąk. Ciasto przełożyć do pojemnika, szczelnie zamknąć. Pozostawić do wyrastania w bloku na 2 godziny. Wsadzić na 16 godzin do lodówki. Wyjąć z lodówki na 2 godziny aby ciasto się zagrzało. Ciasto podzielić na 4 części o kształcie kuli po 250 gram każda i pozostawić w pojemniku na 4 godziny. Rozgrzać kamień w piekarniku na najwyższej półce z opcją grill przez godzinę. Pod kamień można położyć blachę. Blat wysypać obficie mąką. Na blacie rozpłaszczyć kule i dłońmi uformować okrągły placek o średnicy około 30cm, uważając aby nie rozpłaszczyć rantów. Na pizzę wyłożyć sos, uważając aby nie posmarować rantów. Wyłożyć ulubione składniki i wsadzić do piekarnika z opcją góra/dół na około 8 minut.'
+            text_size: self.width, None
+
+        Button:
+            text: 'Moje_Przepisy'
+            on_release:
+                app.root.current = 'przepisy'
+                root.manager.transition.direction = 'right'
+
+
+<ChlebZiarna>:
+    name: 'ziarna'
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            text: 'SKŁADNIKI:'
+            font_size: 25
+            bold: True
+        Label:
+            text: '-480 ml wody\n-2.5 łyżki oleju\n-2.5 łyżki miodu\n-2 łyżeczki soli \n-200 gram mąki pszennej\n-230 gram mąki żytniej typ 170 \n-230 gram mąki razowej\n-2.5 łyżeczki drożdży suchych\n-100 gram siemienia lnianego\n-30 gram słonecznika\n-20 gram maku'
+        Label:
+            text: 'PRZYGOTOWANIE:'
+            font_size: 25
+            bold: True
+        Label:
+            text: 'Dodawaj do formy składniki w następującej kolejności: woda, olej, miód i sól. Następnie wsyp mąki i suszone drożdże. Odstaw na 25 minut w ciepłe miejsce do wyrastania. Po tym czasie wsyp ziarna i delikatnie zamieszaj chleb. Po 2 godzinach wstaw chleb do piekarnika, piecz 50 minut w temp. 200 stopni.'
+            text_size: self.width, None
+
+        Button:
+            text: 'Moje_Przepisy'
+            on_release:
+                app.root.current = 'przepisy'
+                root.manager.transition.direction = 'right'
+
+
+<Drozdzowka>:
+    name: 'drozdzowka'
+    przygotowanie: przygotowanie
+    skladniki: skladniki
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            text: 'SKŁADNIKI:'
+            font_size: 25
+            bold: True
+        Label:
+            id: skladniki
+            text: '-330 gram mąki\n-0.5 szklanki mleka\n-3żółtka jajek\n-3 łyżki cukru \n-50 gram masła\n-7 gram suchych drożdży'
+        Label:
+            text: 'PRZYGOTOWANIE:'
+            font_size: 25
+            bold: True
+        Label:
+            id: przygotowanie
+            text: 'Masło roztopić i ostudzić. Wszystkie składniki wymieszać i pozostawić do podwojenia objętości. Po tym czasie na ciasto wyłożyć owoce. Najlepiej soczyste, które nadadzą ciastu wilgoć np. śliwki, maliny, jagody. Opcjonalnie posypać kruszonką.'
+            text_size: self.width, None
+
+        Button:
+            text: 'Kruszonka'
+            on_press: root.press()
+
+
+
+
+        Button:
+            text: 'Moje_Przepisy'
+            on_release:
+                app.root.current = 'przepisy'
+                root.manager.transition.direction = 'right'
+
+
+
