@@ -4,8 +4,7 @@ from kivy.uix.label import Label
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import ObjectProperty
-
-
+from kivy.core.window import Window
 
 
 class Moje_Przepisy(Screen):
@@ -26,22 +25,19 @@ class Drozdzowka(Screen):
     def press(self):
         przygotowanie = self.przygotowanie.text
         skladniki = self.skladniki.text
-        self.add_widget(Label(text='-100 gram cukru\n-150 gram mąki\n-100 gram zimnego masła\n\n\n\n\n\n\n\n\n\nWymieszaj składniki tak aby powstały grudki. Posyp owoce.'))
+        self.add_widget(Label(text='-100 gram cukru\n-150 gram mąki\n-100 gram zimnego masła\n\n\n\n\n\n\n\n\nWymieszaj składniki tak aby powstały grudki. Posyp owoce.'))
         self.przygotowanie.text = ''
         self.skladniki.text = ''
 
-
 class WindowManager(ScreenManager):
     pass
-
-
-
 
 
 kv = Builder.load_file('layout.kv')
 
 class MojaApkaApp(App):
     def build(self):
+        Window.clearcolor = (0, 1, 1, 1)
         return kv
 
 if __name__ == '__main__':

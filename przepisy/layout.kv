@@ -5,7 +5,16 @@ WindowManager:
     ChlebZiarna:
     Drozdzowka:
 
+
+<Button>
+    background_normal: ''
+    background_color: (1, 0, 1, 1)
+
+<Label>
+    color: (0, 0, 0, 1)
+
 <Moje_Przepisy>:
+
     name: 'przepisy'
 
     BoxLayout:
@@ -17,30 +26,22 @@ WindowManager:
 
         Button:
             text: 'Chleb żytni na zakwasie'
-            background_normal: ''
-            background_color: (1, 0, 1, 1)
             on_release:
                 app.root.current = 'zytni'
                 root.manager.transition.direction = 'left'
         Button:
             text: 'Pizza na kamieniu'
-            background_normal: ''
-            background_color: (1, 0, 1, 1)
             on_release:
                 app.root.current = 'pizza'
                 root.manager.transition.direction = 'left'
         Button:
             text: 'Chleb z ziarnami'
-            background_normal: ''
-            background_color: (1, 0, 1, 1)
             on_release:
                 app.root.current = 'ziarna'
                 root.manager.transition.direction = 'left'
 
         Button:
             text: 'Drożdżówka z owocami'
-            background_normal: ''
-            background_color: (1, 0, 1, 1)
             on_release:
                 app.root.current = 'drozdzowka'
                 root.manager.transition.direction = 'left'
@@ -51,6 +52,9 @@ WindowManager:
     GridLayout:
         cols: 1
         size: root.width, root.height
+
+        Image:
+            source: 'zytni_image.jpg'
 
         Label:
             text: 'SKŁADNIKI:'
@@ -81,6 +85,9 @@ WindowManager:
         cols: 1
         size: root.width, root.height
 
+        Image:
+            source: 'pizza_image.jpeg'
+
         Label:
             text: 'SKŁADNIKI:'
             font_size: 25
@@ -108,6 +115,9 @@ WindowManager:
     GridLayout:
         cols: 1
         size: root.width, root.height
+
+        Image:
+            source: 'ziarna_image.jpg'
 
         Label:
             text: 'SKŁADNIKI:'
@@ -139,6 +149,9 @@ WindowManager:
         cols: 1
         size: root.width, root.height
 
+        Image:
+            source: 'drozdzowka_image.jpg'
+
         Label:
             text: 'SKŁADNIKI:'
             font_size: 25
@@ -158,9 +171,6 @@ WindowManager:
         Button:
             text: 'Kruszonka'
             on_press: root.press()
-
-
-
 
         Button:
             text: 'Moje_Przepisy'
